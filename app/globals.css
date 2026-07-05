@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --color-cream: #faf4ec;
+  --color-ink: #2c241d;
+  --color-forest: #c75d3c;
+  --color-forest-soft: #b04e30;
+  --color-sand: #f0e6d6;
+  --color-gold: #5a7d63;
+  --color-muted: #8a7d6e;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.015em; }
+
+/* Beranda motif: soft, friendly, very rounded */
+.arch { border-radius: 2.5rem; }
+.arch-sm { border-radius: 2rem; }
+
+@keyframes marquee-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee-x { animation: marquee-x 32s linear infinite; }
+
+.numeral-outline { -webkit-text-stroke: 1.5px var(--color-forest); color: transparent; }
+
+.grain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.04; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: #d8c4ab; border-radius: 9999px; }
+
+:focus-visible { outline: 2px solid var(--color-forest); outline-offset: 2px; border-radius: 8px; }
