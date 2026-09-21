@@ -6,10 +6,10 @@ import Footer from "@/components/Footer";
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", weight: ["400", "500", "600", "700"], display: "swap" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-const __jsonld = {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Beranda","description":"Marketplace properti","url":"https://beranda.pintuweb.com","areaServed":"ID"};
+const __jsonld = {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Beranda","description":"Marketplace properti","url":"https://properti-beranda.vercel.app","areaServed":"ID"};
 
 export const metadata = {
-  metadataBase: new URL("https://beranda.pintuweb.com"),
+  metadataBase: new URL("https://properti-beranda.vercel.app"),
   title: "Beranda — Cari Rumah dengan Hati",
   description: "Marketplace properti yang hangat & ramah: temukan rumah, apartemen, dan hunian impianmu di seluruh Indonesia.",
   applicationName: "Beranda",
@@ -17,11 +17,11 @@ export const metadata = {
   authors: [{ name: "Beranda" }],
   creator: "Beranda",
   publisher: "Beranda",
-  alternates: { canonical: "https://beranda.pintuweb.com" },
+  alternates: { canonical: "https://properti-beranda.vercel.app" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://beranda.pintuweb.com",
+    url: "https://properti-beranda.vercel.app",
     siteName: "Beranda",
     title: "Beranda — Cari Rumah dengan Hati",
     description: "Marketplace properti yang hangat & ramah: temukan rumah, apartemen, dan hunian impianmu di seluruh Indonesia.",
