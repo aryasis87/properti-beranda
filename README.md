@@ -1,22 +1,28 @@
-# Beranda — Cari Rumah dengan Hati
+# Beranda — Pilih kawasannya dulu
 
-Marketplace properti yang hangat & ramah: temukan rumah, apartemen, dan hunian impianmu di seluruh Indonesia.
+Cari rumah berdasarkan tahap hidup (keluarga, mahasiswa, pensiun) dan suasana kawasan. Hangat terakota dengan Bricolage Grotesque dan sudut membulat.
 
 **Demo live:** https://properti-beranda.vercel.app
 
 ![Tangkapan layar Beranda](public/og.jpg)
 
-> Template marketplace properti dengan data listing contoh. Formulir kontak hanya demo.
+> Purwarupa desain. Listing, agen, harga, dan alamat adalah contoh fiktif — alamat hanya sampai tingkat kawasan dan tidak ada nomor telepon. Semua formulir (jadwal survei, kontak) hanya menampilkan ringkasan dan tidak mengirim data.
 
-## Konsep
+## Fitur khas
 
-Gaya hidup yang hangat: terakota dan sage, pencarian berdasarkan suasana (dekat kampus, untuk keluarga, investasi), dan kartu sorotan kota.
+- `/kawasan` dan `/kawasan/[slug]` — panduan Kotabaru, Cinere, Sanur, dan Lembang: suasana, perkiraan waktu tempuh, kisaran harga yang dihitung dari listing, dan hal yang perlu diketahui (termasuk kekurangannya).
+- Setiap listing punya tag suasana yang bisa dicari dari beranda.
 
-Semua varian punya `/properti` dengan filter, halaman detail dengan galeri foto dan video, serta `/kontak` dan `/tentang`.
+## Fitur bersama
+
+- Katalog `/properti` dengan filter status, jenis, kota, harga (beli dan sewa dipisah), kamar, dan urutan.
+- Halaman detail: galeri, spesifikasi termasuk harga per m², peta tingkat kecamatan, dan formulir jadwal survei (tanggal dihitung dalam WIB di peramban).
+- `/kontak` dengan pilihan topik (tautan "Ajukan listing" membuka topik jual), `/tentang` dengan daftar agen yang disusun dari data.
+- Semua konten berasal dari `lib/data.js`; statistik dihitung dari data, bukan klaim.
 
 ## Halaman
 
-`/` · `/kontak` · `/properti` · `/properti/[id]` · `/tentang`
+`/` · `/kawasan` · `/kawasan/[slug]` · `/kontak` · `/properti` · `/properti/[id]` · `/tentang`
 
 ## Teknologi
 
@@ -35,6 +41,27 @@ npm run dev
 ```
 
 Buka http://localhost:3000. Untuk build produksi: `npm run build` lalu `npm start`.
+
+## Kredit foto
+
+Semua foto berlisensi CC0 (domain publik), dipotong ke 4:3 dan dikonversi ke WebP.
+
+| Berkas | Fotografer | Sumber | Lisensi |
+| --- | --- | --- | --- |
+| `dapur-terang.webp` | The Pic Pac | [StockSnap](https://stocksnap.io/photo/kitchen-sink-L07UXRLREE) | CC0 |
+| `kamar-hangat.webp` | — | [rawpixel](https://www.rawpixel.com/image/5917601/image-public-domain-wood-house) | CC0 |
+| `kamar-kost.webp` | Medhat Ayad | [StockSnap](https://stocksnap.io/photo/apartment-bed-EGXWIV409M) | CC0 |
+| `kamar-kota.webp` | — | [rawpixel](https://www.rawpixel.com/image/5920688/photo-image-public-domain-house-home) | CC0 |
+| `kamar-studio.webp` | Sylwia Pietruszka | [StockSnap](https://stocksnap.io/photo/bed-table-FND1JADL6W) | CC0 |
+| `lahan.webp` | JJ Skys the Limit | [StockSnap](https://stocksnap.io/photo/grassy-field-TQZZ18QJPR) | CC0 |
+| `ruang-tamu-sofa.webp` | — | [rawpixel](https://www.rawpixel.com/image/5927318/photo-image-public-domain-minimalist-house) | CC0 |
+| `ruang-tamu-terang.webp` | — | [rawpixel](https://www.rawpixel.com/image/5917348/image-frame-light-public-domain) | CC0 |
+| `ruang-teras-kayu.webp` | Joshua Ness | [StockSnap](https://stocksnap.io/photo/house-home-CLD6T4J9VZ) | CC0 |
+| `rumah-dua-lantai.webp` | — | [rawpixel](https://www.rawpixel.com/image/5913733/image-public-domain-plants-house) | CC0 |
+| `rumah-modern.webp` | — | [rawpixel](https://www.rawpixel.com/image/6070500/free-public-domain-cc0-photo) | CC0 |
+| `rumah-satu-lantai.webp` | — | [rawpixel](https://www.rawpixel.com/image/5914459/photo-image-public-domain-house-family) | CC0 |
+| `teras-kolam.webp` | Matt Bango | [StockSnap](https://stocksnap.io/photo/modern-house-UIU7D31EDY) | CC0 |
+| `teras-tropis.webp` | World Travel Adventures | [StockSnap](https://stocksnap.io/photo/furniture-patio-KOIAWLY3SU) | CC0 |
 
 ---
 

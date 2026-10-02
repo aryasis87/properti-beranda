@@ -6,11 +6,11 @@
 
   --color-cream: #faf4ec;
   --color-ink: #2c241d;
-  --color-forest: #c75d3c;
-  --color-forest-soft: #b04e30;
+  --color-forest: #b04e30;
+  --color-forest-soft: #963f25;
   --color-sand: #f0e6d6;
-  --color-gold: #5a7d63;
-  --color-muted: #8a7d6e;
+  --color-gold: #47664f;
+  --color-muted: #6e6255;
 }
 
 html { scroll-behavior: smooth; }

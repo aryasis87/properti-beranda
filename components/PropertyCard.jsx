@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BedDouble, Bath, Maximize, MapPin } from 'lucide-react';
-import { formatHarga } from '@/lib/data';
+import { hargaLabel } from '@/lib/data';
 
 export default function PropertyCard({ item }) {
   const s = item.spesifikasi;
@@ -9,19 +9,24 @@ export default function PropertyCard({ item }) {
   return (
     <Link href={`/properti/${item.id}`} className="group block rounded-[1.75rem] bg-white p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative h-52 overflow-hidden rounded-[1.4rem]">
-        <Image src={item.media.foto[0]} alt={item.judul} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-105" />
+        <Image src={item.media.foto[0]} alt="" fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-105" />
         <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold text-white ${item.status === 'Dijual' ? 'bg-forest' : 'bg-gold'}`}>{item.status}</span>
       </div>
       <div className="px-2 pt-4">
         <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-gold">{item.jenisProperti}</p>
         <h3 className="mt-1 line-clamp-2 font-display text-lg leading-snug text-ink transition-colors group-hover:text-forest">{item.judul}</h3>
         <p className="mt-1.5 flex items-center gap-1 text-sm text-muted"><MapPin size={14} /> {item.lokasi.kecamatan}, {item.lokasi.kota}</p>
+        {item.suasana && (
+          <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Suasana">
+            {item.suasana.slice(0, 3).map((s) => <li key={s} className="rounded-full bg-sand px-2.5 py-0.5 text-xs font-semibold text-ink/85">{s}</li>)}
+          </ul>
+        )}
         <div className="mt-3 flex items-center gap-4 text-sm text-ink/70">
           {s.kamarTidur > 0 && <span className="flex items-center gap-1"><BedDouble size={15} /> {s.kamarTidur}</span>}
           {s.kamarMandi > 0 && <span className="flex items-center gap-1"><Bath size={15} /> {s.kamarMandi}</span>}
           <span className="flex items-center gap-1"><Maximize size={15} /> {luas} m²</span>
         </div>
-        <p className="mt-3 border-t border-black/5 pt-3 font-display text-2xl text-forest">{formatHarga(item.harga)}</p>
+        <p className="mt-3 border-t border-black/5 pt-3 font-display text-2xl text-forest">{hargaLabel(item)}</p>
       </div>
     </Link>
   );
